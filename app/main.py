@@ -4,9 +4,16 @@ from .database import engine
 from .routers import post, user, auth, vote
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
+from alembic import command
+from alembic.config import Config
 
 
 
+def run_migrations():
+    alembic_cfg = Config("alembic.ini")
+    command.upgrade(alembic_cfg, "head")
+    
+run_migrations()
 
 
 print(settings.database_url)
