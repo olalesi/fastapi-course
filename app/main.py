@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 
-print(settings.database_username)
+print(settings.database_url)
         
         
 # models.Base.metadata.create_all(bind=engine)
