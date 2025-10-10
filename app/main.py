@@ -9,17 +9,7 @@ from alembic.config import Config
 
 
 
-def run_migrations():
-    alembic_cfg = Config("alembic.ini")
-    command.upgrade(alembic_cfg, "head")
-    
-run_migrations()
 
-
-print(settings.database_url)
-        
-        
-# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
